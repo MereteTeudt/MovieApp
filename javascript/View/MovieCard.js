@@ -65,7 +65,7 @@ class MovieCard
         }
     }
     static FavClick(key) 
-    // 
+    //The method that is called when the button on the card is clicked
     {
         
         let movieCard = Movie.instances[key];
