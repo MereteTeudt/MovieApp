@@ -66,6 +66,7 @@ class MovieCard
     }
     static FavClick(key) 
     //The method that is called when the button on the card is clicked
+    //The method checks if the movie is a favorite and switches the buttons function accordingly 
     {
         
         let movieCard = Movie.instances[key];
