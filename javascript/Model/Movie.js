@@ -9,7 +9,9 @@ class Movie
         this.summary = slots.summary;
         this.favorite = slots.favorite;
     }
-
+    /**
+     * Creates 3 test movies
+     */
     static CreateTestData() 
     {
         let testMovieOne = {title:"Jurassic Park", year:1993, genre:["Science-Fiction", " Adventure"], img:"Jurassic_Park.jpg", summary:"Dinos be trippin'", favorite:true};
@@ -22,7 +24,9 @@ class Movie
 
         Movie.SaveAll();
     }
-
+    /**
+     * Stores the instances of the movie class in Local Storage
+     */
     static SaveAll()
     {
         var movieTableString="", error=false,
@@ -43,7 +47,7 @@ class Movie
         }
     }
     /**
-     * sdkjasofksjfxdklsmfj
+     * Creates a new instance of Movie based on the object movieRow which is parsed from Local Storage
      * @param {Object} movieRow 
      */
     static ConvertRow2Object(movieRow)
@@ -51,7 +55,7 @@ class Movie
         var movie = new Movie(movieRow);
         return movie;
     }
-
+    
     static LoadAll()
     {
         let key="", keys=[], movieTableString="", movieTable={}; 
