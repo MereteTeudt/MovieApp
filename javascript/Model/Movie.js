@@ -12,9 +12,9 @@ class Movie
 
     static CreateTestData() 
     {
-        let testMovieOne = {title:"Jurassic Park", year:1993, genre:"Science-Fiction", img:"Jurassic_Park.jpg", summary:"Dinos be trippin'", favorite:true};
-        let testMovieTwo = {title:"Jaws", year:1975, genre:"Thriller", img:"Jaws.jpg", summary:"Shark be trippin'", favorite:false};
-        let testMovieThree = {title:"Godzilla", year:2014, genre:"Monster", img:"Godzilla.jpg", summary:"Godzilla be trippin'", favorite: false};
+        let testMovieOne = {title:"Jurassic Park", year:1993, genre:["Science-Fiction", " Adventure"], img:"Jurassic_Park.jpg", summary:"Dinos be trippin'", favorite:true};
+        let testMovieTwo = {title:"Jaws", year:1975, genre:["Thriller"], img:"Jaws.jpg", summary:"Shark be trippin'", favorite:false};
+        let testMovieThree = {title:"Godzilla", year:2014, genre:["Monster"], img:"Godzilla.jpg", summary:"Godzilla be trippin'", favorite: false};
 
         Movie.instances[1] = testMovieOne;
         Movie.instances[2] = testMovieTwo;

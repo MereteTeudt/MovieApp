@@ -1,0 +1,26 @@
+/* Colors */
+.lightGrey
+{
+    background-color: #424242;
+}
+.darkGrey 
+{
+    background-color: #212121;
+}
+.borderColor
+{
+    border-color:  #353535 !important;
+}
+.cardBorder
+{
+    border: 2px solid #031a4b;
+}
+.imgBorder
+{
+    border-radius: 0px;
+}
+.buttonColor
+{
+    background-color: #031a4b;
+    color: white !important;
+}
