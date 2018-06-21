@@ -26,9 +26,9 @@ class MovieCard
     Render()
     //a method that contains the hmtl to make up the cards along with variables for the data
     {
-        return `<div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-4 mb-4" id="${this.key}">
+        return `<div class="col-sm-6 col-xl-3 py-3" id="${this.key}">
         <article class="card border-0 rounded-0">
-            <img class="card-img-top rounded-0" src="img/${this.img}">
+            <img class="card-img-top img-fluid rounded-0" src="img/${this.img}">
             <div class="card-body p-2 bg-light">
                 <h5 class="card-title">Title: ${this.title}</h5>
                 <p class="card-text">Year: ${this.year}</p>
