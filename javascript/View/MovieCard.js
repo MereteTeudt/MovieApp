@@ -1,6 +1,6 @@
 class MovieCard 
 {
-    constructor(slots, key, favorite)
+    constructor(slots, key)
     {
         this.title = slots.title;
         this.year = slots.year;
@@ -10,8 +10,6 @@ class MovieCard
         this.favorite = slots.favorite;
 
         this.key = key;
-
-        this.favorite = favorite;
 
         if(this.favorite)
         {
