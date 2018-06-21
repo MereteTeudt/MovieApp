@@ -1,6 +1,6 @@
 class MovieCard 
 {
-    constructor(slots, key, favorite, favButtonText)
+    constructor(slots, key, favorite)
     {
         this.title = slots.title;
         this.year = slots.year;
@@ -26,7 +26,7 @@ class MovieCard
     Render()
     //a method that contains the hmtl to make up the cards along with variables for the data
     {
-        return `<div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-4" id="${this.key}">
+        return `<div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-4 mb-4" id="${this.key}">
         <article class="card border-0 rounded-0">
             <img class="card-img-top rounded-0" src="img/${this.img}">
             <div class="card-body p-2 bg-light">
@@ -43,8 +43,7 @@ class MovieCard
     //sets up the userinterface by inserting making an instance of the MovieCard class for each object in the database 
     //and inserting it into the page with the Render method
     {
-        let allMoviesSection = document.getElementById('allMovies'), favMoviesSection = document.getElementById('favMovies'),
-            keys = [], movies = {};
+        let allMoviesSection = document.getElementById('allMovies'), favMoviesSection = document.getElementById('favMovies'), keys = [];
 
         Movie.LoadAll();
 
@@ -66,6 +65,7 @@ class MovieCard
         }
     }
     static FavClick(key) 
+    // 
     {
         
         let movieCard = Movie.instances[key];
@@ -75,6 +75,7 @@ class MovieCard
         if(!movieCard.favorite)
         {
             movieCard.favorite = true;
+            Movie.instances[key].favorite = true;
             favButton.innerHTML = "Remove from favorites";
             const newParent = document.getElementById('favMovies');
             newParent.appendChild(card);
@@ -82,9 +83,12 @@ class MovieCard
         else
         {
             movieCard.favorite = false;
+            Movie.instances[key].favorite = false;
             favButton.innerHTML = "Add to favorites";
             const newParent = document.getElementById('allMovies');
             newParent.appendChild(card);
         }
+
+        Movie.SaveAll();
     }
 }
