@@ -25,9 +25,10 @@ class MovieCard
             this.favButtonText = "Add to favorites"
         }
     }
-
+    /**
+     * A method that contains the hmtl to make up the cards along with variables for the data
+     */
     Render()
-    //a method that contains the hmtl to make up the cards along with variables for the data
     {
         return `<div class="col-sm-6 col-lg-4 col-xl-3 py-4" id="${this.key}">
                     <article class="card cardBorder">
@@ -41,10 +42,11 @@ class MovieCard
                     </article>
                 </div>`
     }
-
+    /**
+     * Sets up the userinterface by inserting making an instance of the MovieCard class for each object in the database-
+     * and inserting it into the page with the Render method
+     */
     static SetupUserInterface()
-    //sets up the userinterface by inserting making an instance of the MovieCard class for each object in the database 
-    //and inserting it into the page with the Render method
     {
         let allMoviesSection = document.getElementById('allMovies'), 
             favMoviesSection = document.getElementById('favMovies'), 
@@ -69,9 +71,11 @@ class MovieCard
             }
         }
     }
+    /**
+     *The method that is called when the button on the card is clicked
+     *The method checks if the movie is a favorite and switches the buttons function accordingly 
+     */
     static FavClick(key) 
-    //The method that is called when the button on the card is clicked
-    //The method checks if the movie is a favorite and switches the buttons function accordingly 
     {
         
         let movieCard = Movie.instances[key],
