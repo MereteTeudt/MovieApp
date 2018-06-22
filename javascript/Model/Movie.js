@@ -74,7 +74,7 @@ class Movie
             keys=[], 
             movieTableString="", 
             movieTable={}; 
-            
+
         try
         {
             if(localStorage["movieTable"])
@@ -103,4 +103,7 @@ class Movie
         }
     }
 }
+/**
+ * Creates a property of the Movie class with the datatype of object.
+ */
 Movie.instances = {};
