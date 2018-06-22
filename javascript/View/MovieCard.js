@@ -46,7 +46,7 @@ class MovieCard
     }
 
     /**
-     * Sets up the userinterface by inserting making an instance of the MovieCard class for each object in the database-
+     * Sets up the userinterface by making an instance of the MovieCard class for each object in the database-
      * and inserting it into the page with the Render method
      */
     static SetupUserInterface()
@@ -76,9 +76,9 @@ class MovieCard
     }
 
     /**
-     * @param {Number} key 
      * The method that is called when the button on the card is clicked
-     * The method checks if the movie is a favorite and switches the buttons function accordingly 
+     * The method checks if the movie is a favorite and switches the buttons function accordingly.
+     * @param {Number} key 
      */
     static FavClick(key) 
     {
