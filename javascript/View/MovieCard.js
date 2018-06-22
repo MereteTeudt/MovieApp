@@ -2,8 +2,8 @@ class MovieCard
 {
     /**
      * 
-     * @param {Movie.instances values} slots 
-     * @param {Movie.instances keys} key 
+     * @param {Object} slots 
+     * @param {Number} key 
      */
     constructor(slots, key)
     {
