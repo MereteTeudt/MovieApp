@@ -37,6 +37,7 @@ class Movie
         var movieTableString="", 
             error=false,
             nmbrOfMovies=Object.keys(Movie.instances).length;
+
         try 
         {
             movieTableString = JSON.stringify(Movie.instances);
@@ -62,7 +63,7 @@ class Movie
         var movie = new Movie(movieRow);
         return movie;
     }
-    
+
     /**
      * Loads the string of Movie class instances, parses them to objects and puts them into Movie.instances.
      * If there are no movies saved in Local Storage, test data is created.
@@ -73,6 +74,7 @@ class Movie
             keys=[], 
             movieTableString="", 
             movieTable={}; 
+            
         try
         {
             if(localStorage["movieTable"])
