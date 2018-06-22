@@ -1,5 +1,10 @@
 class MovieCard 
 {
+    /**
+     * 
+     * @param {Movie.instances values} slots 
+     * @param {Movie.instances keys} key 
+     */
     constructor(slots, key)
     {
         this.title = slots.title;
@@ -25,23 +30,25 @@ class MovieCard
     //a method that contains the hmtl to make up the cards along with variables for the data
     {
         return `<div class="col-sm-6 col-lg-4 col-xl-3 py-4" id="${this.key}">
-        <article class="card cardBorder">
-            <img class="card-img img-fluid imgBorder" src="img/${this.img}">
-            <div class="card-body p-2 bg-light">
-                <h5 class="card-title">Title: ${this.title}</h5>
-                <p class="card-text">Year: ${this.year}</p>
-                <p class="card-text">Genre: ${this.genre}</p>
-            </div>
-            <a class="btn buttonColor w-100 rounded-0" id="favorite" onclick="MovieCard.FavClick('${this.key}')">${this.favButtonText}</a>
-        </article>
-    </div>`
+                    <article class="card cardBorder">
+                        <img class="card-img img-fluid imgBorder" src="img/${this.img}">
+                        <div class="card-body p-2 bg-light">
+                            <h5 class="card-title">Title: ${this.title}</h5>
+                            <p class="card-text">Year: ${this.year}</p>
+                            <p class="card-text">Genre: ${this.genre}</p>
+                        </div>
+                        <a class="btn buttonColor w-100 rounded-0" id="favorite" onclick="MovieCard.FavClick('${this.key}')">${this.favButtonText}</a>
+                    </article>
+                </div>`
     }
 
     static SetupUserInterface()
     //sets up the userinterface by inserting making an instance of the MovieCard class for each object in the database 
     //and inserting it into the page with the Render method
     {
-        let allMoviesSection = document.getElementById('allMovies'), favMoviesSection = document.getElementById('favMovies'), keys = [];
+        let allMoviesSection = document.getElementById('allMovies'), 
+            favMoviesSection = document.getElementById('favMovies'), 
+            keys = [];
 
         Movie.LoadAll();
 
@@ -67,9 +74,9 @@ class MovieCard
     //The method checks if the movie is a favorite and switches the buttons function accordingly 
     {
         
-        let movieCard = Movie.instances[key];
-        let card = document.getElementById(key);
-        let favButton = card.querySelector("#favorite");
+        let movieCard = Movie.instances[key],
+            card = document.getElementById(key),
+            favButton = card.querySelector("#favorite");
 
         if(!movieCard.favorite)
         {
