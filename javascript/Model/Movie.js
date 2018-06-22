@@ -1,7 +1,6 @@
 class Movie 
 {
     /**
-     * 
      * @param {Object} slots 
      */
     constructor(slots)
