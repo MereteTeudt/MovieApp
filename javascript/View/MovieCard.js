@@ -1,7 +1,6 @@
 class MovieCard 
 {
     /**
-     * 
      * @param {Object} slots 
      * @param {Number} key 
      */
@@ -25,6 +24,7 @@ class MovieCard
             this.favButtonText = "Add to favorites"
         }
     }
+
     /**
      * A method that contains the hmtl to make up the cards along with variables for the data
      */
@@ -44,6 +44,7 @@ class MovieCard
         </div>`
         return card;
     }
+
     /**
      * Sets up the userinterface by inserting making an instance of the MovieCard class for each object in the database-
      * and inserting it into the page with the Render method
@@ -73,6 +74,7 @@ class MovieCard
             }
         }
     }
+
     /**
      * @param {Number} key 
      * The method that is called when the button on the card is clicked
@@ -80,7 +82,6 @@ class MovieCard
      */
     static FavClick(key) 
     {
-        
         let movieCard = Movie.instances[key],
             card = document.getElementById(key),
             favButton = card.querySelector("#favorite");
@@ -101,7 +102,6 @@ class MovieCard
             const newParent = document.getElementById('allMovies');
             newParent.appendChild(card);
         }
-
         Movie.SaveAll();
     }
 }

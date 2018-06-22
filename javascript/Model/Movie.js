@@ -12,6 +12,7 @@ class Movie
         this.summary = slots.summary;
         this.favorite = slots.favorite;
     }
+
     /**
      * Creates 3 test movies
      */
@@ -27,6 +28,7 @@ class Movie
 
         Movie.SaveAll();
     }
+
     /**
      * Stores the instances of the movie class in Local Storage
      */
@@ -50,6 +52,7 @@ class Movie
             console.log(nmbrOfMovies + " movies saved.");
         }
     }
+
     /**
      * Creates a new instance of Movie based on the object movieRow which is parsed from Local Storage
      * @param {Object} movieRow 
@@ -59,6 +62,7 @@ class Movie
         var movie = new Movie(movieRow);
         return movie;
     }
+    
     /**
      * Loads the string of Movie class instances, parses them to objects and puts them into Movie.instances.
      * If there are no movies saved in Local Storage, test data is created.
@@ -96,6 +100,5 @@ class Movie
             this.CreateTestData();
         }
     }
-
 }
 Movie.instances = {};
